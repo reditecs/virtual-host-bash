@@ -161,21 +161,6 @@ if [ "$action" == 'create' ]
 			rm $sitesAvailabledomain
 		fi
 
-		### check if directory exists or not
-		if [ -d $rootDir ]; then
-			echo -e $"Delete host root directory ? (y/n)"
-			read deldir
-
-			if [ "$deldir" == 'y' -o "$deldir" == 'Y' ]; then
-				### Delete the directory
-				rm -rf $rootDir
-				echo -e $"Directory deleted"
-			else
-				echo -e $"Host directory conserved"
-			fi
-		else
-			echo -e $"Host directory not found. Ignored"
-		fi
 
 		### show the finished message
 		echo -e $"Complete!\nYou just removed Virtual Host $domain"
